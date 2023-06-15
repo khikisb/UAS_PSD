@@ -36,11 +36,11 @@ with tab3:
 with tab4:
     # Define the prediction function
     def predict(Open, High, Low, Volume):
-        prediction = model.predict(pd.DataFrame([[Open, High, Low, Volume]], columns = ['"Open, High, Low, Volume"']))
+        prediction = model.predict(pd.DataFrame([[Open, High, Low, Volume]], columns = ["Open", "High", "Low", "Volume"]))
         return prediction
 
     def predict2(Open, High, Low, Volume):
-        prediction2 = model2.predict2(pd.DataFrame([[Open, High, Low, Volume]], columns = ['"Open, High, Low, Volume"']))
+        prediction2 = model2.predict2(pd.DataFrame([[Open, High, Low, Volume]], columns = ["Open", "High", "Low", "Volume"]))
         return prediction2
     
     st.header('Jawablah Semua Pertanyaan Berikut :')
