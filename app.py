@@ -48,7 +48,7 @@ with tab4:
     Open = st.number_input("Harga pembukaan saham pada suatu periode waktu", key="Open")
     High = st.number_input("Harga tertinggi saham dalam periode waktu tersebut", key="High")
     Low = st.number_input("Harga terendah saham dalam periode waktu tersebut", key="Low")
-    Close = st.number_input("Harga penutupan saham pada suatu periode waktu", key="Close")
+    Volume = st.number_input("Volume perdagangan saham dalam suatu periode waktu.", key="Volume")
 
     if st.button('Prediksi'):
         prediksi = predict(Open, High, Low, Volume)
