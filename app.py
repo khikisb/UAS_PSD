@@ -28,7 +28,10 @@ with tab2:
    st.image("MMScaler.png")
     
 with tab3:
-   st.title("PredBRI")
+   st.write("Metode KNN")
+   st.image("AkurasiKNN.png")
+   st.write("Metode Naive Bayes")
+   st.image("AkurasiNB.png")
 
 with tab4:
     # Define the prediction function
