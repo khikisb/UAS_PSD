@@ -40,7 +40,7 @@ with tab4:
         return prediction
 
     def predict2(Open, High, Low, Volume):
-        prediction2 = model2.predict2(pd.DataFrame([[Open, High, Low, Volume]], columns = ["Open", "High", "Low", "Volume"]))
+        prediction2 = model2.predict(pd.DataFrame([[Open, High, Low, Volume]], columns = ["Open", "High", "Low", "Volume"]))
         return prediction2
     
     st.header('Jawablah Semua Pertanyaan Berikut :')
