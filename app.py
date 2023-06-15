@@ -36,19 +36,19 @@ with tab3:
 with tab4:
     # Define the prediction function
     def predict(Open, High, Low, Close, Volume):
-        prediction = model.predict(pd.DataFrame([[Open, High, Low, Volume]], columns = ['"Open, High, Low, Volume"',]))
+        prediction = model.predict(pd.DataFrame([[Open, High, Low, Volume]], columns = ['"Open, High, Low, Volume"']))
         return prediction
 
     def predict2(Open, High, Low, Close, Volume):
-        prediction2 = model2.predict2(pd.DataFrame([[Open, High, Low, Volume]], columns = ['"Open, High, Low, Volume"',]))
+        prediction2 = model2.predict2(pd.DataFrame([[Open, High, Low, Volume]], columns = ['"Open, High, Low, Volume"']))
         return prediction2
     
     st.header('Jawablah Semua Pertanyaan Berikut :')
 
     Open = st.number_input("Harga pembukaan saham pada suatu periode waktu", key="Masukkan Angka")
     High = st.number_input("Harga tertinggi saham dalam periode waktu tersebut", key="Masukkan Angka")
-    Low = st.text_input("Harga terendah saham dalam periode waktu tersebut.", key="Masukkan Angka",)
-    Volume = st.text_input("Volume perdagangan saham dalam suatu periode waktu.", key="Masukkan Angka",)
+    Low = st.text_input("Harga terendah saham dalam periode waktu tersebut.", key="Masukkan Angka")
+    Volume = st.text_input("Volume perdagangan saham dalam suatu periode waktu.", key="Masukkan Angka")
 
     if st.button('Prediksi'):
         prediksi = predict(Open, High, Low, Volume)
