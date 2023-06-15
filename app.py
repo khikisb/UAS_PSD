@@ -36,23 +36,22 @@ with tab3:
 with tab4:
     # Define the prediction function
     def predict(Open, High, Low, Close, Volume):
-        prediction = model.predict(pd.DataFrame([[Open, High, Low, Close, Volume]], columns = ['"Open, High, Low, Close, Volume"',]))
+        prediction = model.predict(pd.DataFrame([[Open, High, Low, Volume]], columns = ['"Open, High, Low, Volume"',]))
         return prediction
 
     def predict2(Open, High, Low, Close, Volume):
-        prediction2 = model2.predict2(pd.DataFrame([[Open, High, Low, Close, Volume]], columns = ['"Open, High, Low, Close, Volume"',]))
+        prediction2 = model2.predict2(pd.DataFrame([[Open, High, Low, Volume]], columns = ['"Open, High, Low, Volume"',]))
         return prediction2
     
     st.header('Jawablah Semua Pertanyaan Berikut :')
 
-    Open = st.selectbox('Apakah anak-anak aman di antara anggota keluarga seperti kakek nenek, paman, bibi, sepupu', ['Setuju', 'Tidak Setuju'])
-    High = st.selectbox('Anak-anak paling sering dilecehkan oleh orang asing di masyarakat kita', ['Setuju', 'Tidak Setuju'])
-    Low = st.selectbox('Anak laki-laki tidak membutuhkan pengetahuan pencegahan pelecehan seksual', ['Setuju', 'Tidak Setuju'])
-    Close = st.selectbox('Mengajarkan pencegahan pelecehan seksual di sekolah tidak perlu. Itu akan membuat anak penasaran dengan seks', ['Setuju', 'Tidak Setuju'])
-    Volume = st.selectbox('Apakah anda tahu apa itu perawatan anak?', ['Iya Tahu', 'Tidak Tahu'])
+    Open = st.number_input("Harga pembukaan saham pada suatu periode waktu", key="Masukkan Angka")
+    High = st.number_input("Harga tertinggi saham dalam periode waktu tersebut", key="Masukkan Angka")
+    Low = st.text_input("Harga terendah saham dalam periode waktu tersebut.", key="Masukkan Angka",)
+    Volume = st.text_input("Volume perdagangan saham dalam suatu periode waktu.", key="Masukkan Angka",)
 
     if st.button('Prediksi'):
-        prediksi = predict(Open, High, Low, Close, Volume)
-        prediksi2 = predict2(Open, High, Low, Close, Volume)
+        prediksi = predict(Open, High, Low, Volume)
+        prediksi2 = predict2(Open, High, Low, Volume)
         st.success(f'Prediksi harga penutupan KNN: {prediksi}')
         st.success(f'Prediksi harga penutupan Menggunakan Naive Bayes: {prediksi2}')
