@@ -39,9 +39,9 @@ with tab4:
         prediction = model.predict(pd.DataFrame([[Open, High, Low, Volume]], columns = ['"Open, High, Low, Volume"']))
         return prediction
 
-#     def predict2(Open, High, Low, Volume):
-#         prediction2 = model2.predict2(pd.DataFrame([[Open, High, Low, Volume]], columns = ['"Open, High, Low, Volume"']))
-#         return prediction2
+    def predict2(Open, High, Low, Volume):
+        prediction2 = model2.predict2(pd.DataFrame([[Open, High, Low, Volume]], columns = ['"Open, High, Low, Volume"']))
+        return prediction2
     
     st.header('Jawablah Semua Pertanyaan Berikut :')
 
@@ -53,4 +53,4 @@ with tab4:
     if st.button('Prediksi'):
         prediksi = predict(Open, High, Low, Volume)
         st.success(f'Prediksi harga penutupan KNN: {prediksi}')
-#         st.success(f'Prediksi harga penutupan Menggunakan Naive Bayes: {prediksi2}')
+        st.success(f'Prediksi harga penutupan Menggunakan Naive Bayes: {prediksi2}')
